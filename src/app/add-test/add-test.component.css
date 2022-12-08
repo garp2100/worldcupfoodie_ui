@@ -1,0 +1,30 @@
+
+.add-test-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    color: #01070C;
+    padding: 30px;
+  }
+  .add-test-heading {
+    margin: 0 10px 10px 10px;
+  }
+  input {
+    margin-bottom: 10px;
+  }
+  #rating,
+  #order-again {
+    margin-left: 10px;
+  }
+  button {
+    background-color: #EF6738;
+    border: 2px solid #EF6738;
+    margin-top: 20px;
+  }
+    button:hover {
+      background-color: #03324C;
+      color: #EF6738;
+    }

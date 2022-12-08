@@ -1,0 +1,46 @@
+<app-match-chosen></app-match-chosen>
+<div class="d-flex justify-content-center" >
+<div class="dropdown-container">
+  <form novalidate [formGroup]="filterForm" (input)="onInputChange()">
+    <label for="searchIngredients">Add Grocery Items by Search:</label>
+    <input id="searchIngredients" type="text" formControlName="filter" />
+  </form>
+  <div class="list-container" *ngIf="dropdownFlag">
+    <ul class="ingredients-list">
+      <li
+        *ngFor="
+          let meal of apiResponse.meals
+            | dropdownFilter: filterForm.get('filter')?.value
+        "
+        (click)="selectOption(meal.strIngredient)"
+      >
+        {{ meal.strIngredient }}
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<h4>Your selected ingredients are below</h4>
+<div class="d-flex justify-content-left" >
+
+<ul>
+  <li *ngFor="let selectedIngredient of selectedIngredients; let i = index">
+    {{ selectedIngredient }} <button (click)="deselectOption(i)">Remove</button>
+  </li>
+</ul>
+</div>
+
+
+<hr>
+<button ><a [routerLink]="['/grocerylist']" [routerLinkActive]="['link-active']">Submit grocery list</a></button>
+
+<button >
+  <a [routerLink]="['/world-cup-matches']" [routerLinkActive]="['link-active']"
+    >Go Back to World Cup Matches</a>
+          </button>
+
+          
+<!-- <div *ngFor="let api of apiResponse.meals">
+  Ingredients: {{ api.strIngredient }}
+</div> -->

@@ -1,0 +1,27 @@
+
+<!-- {{focusedMatch|json}} -->
+<form (ngSubmit)="submit()" class="add-test-form">
+    <h2 class="add-order-heading">Add a dish</h2>
+    <p>
+      <label for="matchId">matchId:</label>
+      <input type="text"
+             name="matchId"
+             id="matchId"
+             [(ngModel)]="matchId" />
+    </p>
+    <p>
+      <label for="dish1">dish name:</label>
+      <input type="text"
+             name="dish1"
+             id="dish1"
+             [(ngModel)]="dish1" />
+    </p>
+    <p>
+      <label for="description">description:</label>
+      <input type="text"
+             name="description"
+             id="description"
+             [(ngModel)]="description" />
+    </p>
+    <button>Submit</button>
+  </form>
