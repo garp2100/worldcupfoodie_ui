@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RootObject } from '../interface/world-cup-foodie';
-import { Meals } from '../interface/world-cup-meals';
+import { Meals, RootObject2 } from '../interface/world-cup-meals';
 import { WorldCupMealsService } from '../world-cup-meals.service';
 
 @Component({
@@ -9,16 +8,15 @@ import { WorldCupMealsService } from '../world-cup-meals.service';
   styleUrls: ['./list-meals.component.css']
 })
 export class ListMealsComponent implements OnInit {
-  apiResponse: RootObject = {
-    meals: []
-  }
+  apiResponse: RootObject2 = new Object as RootObject2;
 
   constructor(private service: WorldCupMealsService) { }
 
   ngOnInit(): void {
+    this.fetchMeals();
   }
 
   fetchMeals = (): void => {
-    this.service.fetchMeals().subscribe((data: RootObject) => this.apiResponse = data);
+    this.service.fetchMeals().subscribe((data: RootObject2) => this.apiResponse = data);
   }
 }

@@ -54,7 +54,7 @@ export interface Meals {
     dateModified?: any;
 }
 
-export interface RootObject {
+export interface RootObject2 {
     meals: Meals[];
 }
 
