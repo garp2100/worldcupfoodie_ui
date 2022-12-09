@@ -12,5 +12,4 @@ export class GrocerylistComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

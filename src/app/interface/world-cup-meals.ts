@@ -1,4 +1,4 @@
-export interface Meal {
+export interface Meals {
     idMeal: string;
     strMeal: string;
     strDrinkAlternate?: any;
@@ -55,7 +55,7 @@ export interface Meal {
 }
 
 export interface RootObject {
-    meals: Meal[];
+    meals: Meals[];
 }
 
 

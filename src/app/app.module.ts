@@ -11,6 +11,7 @@ import { MatchChosenComponent } from './match-chosen/match-chosen.component';
 import { GrocerylistComponent } from './grocerylist/grocerylist.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { AddTestComponent } from './add-test/add-test.component';
+import { ListMealsComponent } from './list-meals/list-meals.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddTestComponent } from './add-test/add-test.component';
     MatchChosenComponent,
     GrocerylistComponent,
     AddDishComponent,
-    AddTestComponent
+    AddTestComponent,
+    ListMealsComponent
   ],
   imports: [
     BrowserModule,
