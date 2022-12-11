@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DishCrudService } from '../dish-crud.service';
 import { WorldCupDish } from '../interface/world-cup-dish';
 import { WorldCupMatchInfo } from '../world-cup-match-info';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
@@ -8,30 +9,31 @@ import { WorldCupMatchesService } from '../world-cup-matches.service';
   styleUrls: ['./add-test.component.css']
 })
 export class AddTestComponent implements OnInit {
-  @Output() dishSave = new EventEmitter<WorldCupDish>();
-  matchId: number = 0;
-  dish1: string = '';
-  description: string = '';
   focusedMatch = <WorldCupMatchInfo> {} as WorldCupMatchInfo;
+  newMatchId: number = this.focusedMatch.id;
+  newDish1: string = "";
+  newDescription: string = "";
+  createdDish: WorldCupDish = {
+    matchId: this.focusedMatch.id,
+    dish1: "",
+    description: "",
+  }
 
-  constructor(private service2:WorldCupMatchesService) { }
+  constructor(private service2:WorldCupMatchesService, private service3:DishCrudService) { }
   ngOnInit(): void {
     this.service2.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
-
+    this.newMatchId = this.focusedMatch.id
   }
 
 getID():any{
   return this.focusedMatch.id;
 }
 
-  submit = (): void => {
-    this.dishSave.emit({
-      matchId: this.matchId,
-      dish1: this.dish1,
-      description: this.description,
-    });
-    this.matchId = this.focusedMatch.id;
-    this.dish1 = '';
-    this.description = '';
-  };
+addDish = (dish: WorldCupDish): void => {
+  dish = {matchId: this.focusedMatch.id, dish1: this.newDish1, description: this.newDescription};
+  this.service3.addNewDish(dish).subscribe(() => this.service2.getFocusedMatch())
+  this.newDish1 = "";
+  this.newDescription = "";
+}
+
 }
