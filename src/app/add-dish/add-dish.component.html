@@ -1,12 +1,10 @@
 
 <app-match-chosen></app-match-chosen>
 
-
 <!-- 
 <h1>DISH CRUD</h1>
 
 
-<h1>{{focusedMatch.team1}}</h1>
 
 <div *ngFor="let dish of allDishes ">
 <p>{{dish.dish1}}</p>
@@ -22,17 +20,17 @@
     <!-- <app-filter-form (filterUpdate)="changeFilter($event)"></app-filter-form> -->
 
 
-    <table class="order-table">
-      <tr>
-        <th>Dish Name</th>
-        <th>Description</th>
-        <th>MatchId</th>
-        <th>DishId</th>
-      </tr>
+ 
 
       <tr *ngFor="let dish of allDishes; index as i">
         <div class="d-flex justify-content-center" *ngIf="dish.matchId==focusedMatch.id; else elseBlock">
-
+          <table class="order-table">
+            <tr>
+              <th>Dish Name</th>
+              <th>Description</th>
+              <th>MatchId</th>
+              <th>DishId</th>
+            </tr>
             <td class="innerDishInfo">{{ dish.dish1 }}</td>
             <td class="innerDishInfo">{{ dish.description }}</td>
             <td class="innerDishInfo">{{ dish.matchId }}</td>
@@ -44,14 +42,14 @@
                 <i class="fa-solid fa-trash-can" title="Delete"></i>
               </button>
             </td>
+          </table>
 
         </div>
 
         
       </tr>
-      <ng-template #elseBlock>No Meals have been added for this match!</ng-template>
+      <ng-template #elseBlock></ng-template>
 
-    </table>
     <!-- <app-add-order-form (orderSave)="addOrder(focusedDish)"></app-add-order-form> -->
   </div>
 

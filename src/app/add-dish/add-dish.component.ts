@@ -15,12 +15,9 @@ export class AddDishComponent implements OnInit {
 
   constructor(private dishcrudstuff: DishCrudService ,private router: Router,private service2:WorldCupMatchesService) { }
   focusedMatch = <WorldCupMatchInfo> {} as WorldCupMatchInfo;
-  focusedDish = <any> {} as any;
-
   ngOnInit(): void {
     this.service2.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
     this.dishcrudstuff.getAllDishes().subscribe((data:WorldCupDish[])=>this.allDishes=data);
-    this.dishcrudstuff.getFocusedDish(this.focusedMatch.id).subscribe((data:any)=>this.focusedDish=data);
 
   }
 

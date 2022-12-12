@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meals, RootObject2 } from '../interface/world-cup-meals';
 import { WorldCupMealsService } from '../world-cup-meals.service';
-
 @Component({
   selector: 'app-list-meals',
   templateUrl: './list-meals.component.html',
@@ -9,7 +8,6 @@ import { WorldCupMealsService } from '../world-cup-meals.service';
 })
 export class ListMealsComponent implements OnInit {
   apiResponse: RootObject2 = new Object as RootObject2;
-
   constructor(private service: WorldCupMealsService) { }
 
   ngOnInit(): void {

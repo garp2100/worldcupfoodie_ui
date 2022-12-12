@@ -12,7 +12,6 @@ import { GrocerylistComponent } from './grocerylist/grocerylist.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { AddTestComponent } from './add-test/add-test.component';
 import { ListMealsComponent } from './list-meals/list-meals.component';
-
 @NgModule({
   declarations: [
     AppComponent,
