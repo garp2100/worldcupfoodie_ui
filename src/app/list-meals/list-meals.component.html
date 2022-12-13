@@ -1,4 +1,5 @@
-<div *ngFor="let meal of apiResponse.meals |  slice:0:2;">
+<!-- |  slice:0:2; -->
+<div *ngFor="let meal of apiResponse.meals ">
   
   <button class="btn btn-info" (click)="addMealIDToArray(meal)" >
     {{ meal.strMeal }}
