@@ -11,8 +11,7 @@
     <tr *ngFor="let dish of allDishes; index as i">
       <div
         class="d-flex justify-content-center"
-        *ngIf="dish.matchId == focusedMatch.id; else elseBlock"
-      >
+        *ngIf="dish.matchId == focusedMatch.id; else elseBlock" >
         <td class="innerDishInfo">{{ dish.dish1 }}</td>
         <td class="innerDishInfo">{{ dish.description }}</td>
         <td class="innerDishInfo">{{ dish.matchId }}</td>
@@ -26,7 +25,7 @@
       </div>
     </tr>
     <ng-template #elseBlock
-      >No Meals have been added for this match!</ng-template
+      ></ng-template
     >
   </table>
 </div>

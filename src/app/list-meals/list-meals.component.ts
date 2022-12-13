@@ -19,4 +19,15 @@ export class ListMealsComponent implements OnInit {
   fetchMeals = (): void => {
     this.service.fetchMeals().subscribe((data: RootObject2) => this.apiResponse = data);
   }
+ 
+
+  public addMealIDToArray(mealThing: Meals): void {
+    if (mealThing){
+       this.service.selectedMeal.push(mealThing);
+     }
+   }
+ 
+  //  public deselectOption(mealId: string): void {
+  //   this.service.selectedMeal.splice(mealId, 1)
+  //  }
 }
