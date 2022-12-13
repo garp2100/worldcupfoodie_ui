@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WorldCupMatchInfo } from './world-cup-match-info';
+import { WorldCupMatchInfo } from './interface/world-cup-match-info';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class WorldCupMatchesService {
   // matches: WorldCupMatchInfo[] = [
   //   {
-    
+
 
   //     id:47,
   //     team1:'Serbia' ,
@@ -18,7 +18,7 @@ export class WorldCupMatchesService {
   //     matchDate:'2022-12-02 22:00:00.000' ,
   //   },
   //   {
-     
+
 
   //     id:48,
   //     team1:'Cameroon' ,
@@ -27,7 +27,7 @@ export class WorldCupMatchesService {
   //     matchDate:'2022-12-02 22:00:00.000' ,
   //   },
   //   {
-     
+
 
   //     id:45,
   //     team1:'Ghana' ,
@@ -35,7 +35,7 @@ export class WorldCupMatchesService {
 
   //     matchDate:'2022-12-02 22:00:00.000' ,
   //   },
-    
+
   // ];
   backendURL:string='https://localhost:7235/api';
 
@@ -56,11 +56,11 @@ export class WorldCupMatchesService {
     return this.httpClient.get<WorldCupMatchInfo>(this.backendURL + "/Matches/"+this.eventIDUsing);
   }
   eventIDUsing=1;
-  
+
   eventBeingUsed(idEvent: number){
-   
+
     this.eventIDUsing = idEvent;
-    
+
 }
 returnEventID(): number {
   return this.eventIDUsing;

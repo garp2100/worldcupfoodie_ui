@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DishCrudService } from '../dish-crud.service';
 import { WorldCupDish } from '../interface/world-cup-dish';
-import { WorldCupMatchInfo } from '../world-cup-match-info';
+import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
 @Component({
   selector: 'app-add-test',
@@ -25,15 +25,14 @@ export class AddTestComponent implements OnInit {
     this.newMatchId = this.focusedMatch.id
   }
 
-getID():any{
-  return this.focusedMatch.id;
-}
+  getID():any{
+    return this.focusedMatch.id;
+  }
 
-addDish = (dish: WorldCupDish): void => {
-  dish = {matchId: this.focusedMatch.id, dish1: this.newDish1, description: this.newDescription};
-  this.service3.addNewDish(dish).subscribe(() => this.service2.getFocusedMatch())
-  this.newDish1 = "";
-  this.newDescription = "";
-}
-
+ addDish = (dish: WorldCupDish): void => {
+   dish = {matchId: this.focusedMatch.id, dish1: this.newDish1, description: this.newDescription};
+   this.service3.addNewDish(dish).subscribe(() => this.service2.getFocusedMatch())
+   this.newDish1 = "";
+   this.newDescription = "";
+ }
 }

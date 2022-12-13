@@ -1,68 +1,43 @@
-
 <app-match-chosen></app-match-chosen>
-
-
-<!-- 
-<h1>DISH CRUD</h1>
-
-
-<h1>{{focusedMatch.team1}}</h1>
-
-<div *ngFor="let dish of allDishes ">
-<p>{{dish.dish1}}</p>
-<p>{{dish.description}}</p>
-<p>{{dish.matchId}}</p>
-
-</div> 
-
-
-<p>{{focusedDish.id}}</p> -->
-
 <div class="d-flex justify-content-center">
-    <!-- <app-filter-form (filterUpdate)="changeFilter($event)"></app-filter-form> -->
+  <table class="order-table">
+    <tr>
+      <th>Dish Name</th>
+      <th>Description</th>
+      <th>MatchId</th>
+      <th>DishId</th>
+    </tr>
 
+    <tr *ngFor="let dish of allDishes; index as i">
+      <div
+        class="d-flex justify-content-center"
+        *ngIf="dish.matchId == focusedMatch.id; else elseBlock"
+      >
+        <td class="innerDishInfo">{{ dish.dish1 }}</td>
+        <td class="innerDishInfo">{{ dish.description }}</td>
+        <td class="innerDishInfo">{{ dish.matchId }}</td>
+        <td class="innerDishInfo">{{ dish.id }}</td>
 
-    <table class="order-table">
-      <tr>
-        <th>Dish Name</th>
-        <th>Description</th>
-        <th>MatchId</th>
-        <th>DishId</th>
-      </tr>
+        <td>
+          <button (click)="removeOrder(dish.id!)">
+            <i class="fa-solid fa-trash-can" title="Delete"></i>
+          </button>
+        </td>
+      </div>
+    </tr>
+    <ng-template #elseBlock
+      >No Meals have been added for this match!</ng-template
+    >
+  </table>
+</div>
 
-      <tr *ngFor="let dish of allDishes; index as i">
-        <div class="d-flex justify-content-center" *ngIf="dish.matchId==focusedMatch.id; else elseBlock">
-
-            <td class="innerDishInfo">{{ dish.dish1 }}</td>
-            <td class="innerDishInfo">{{ dish.description }}</td>
-            <td class="innerDishInfo">{{ dish.matchId }}</td>
-            <td class="innerDishInfo">{{ dish.id }}</td>
-    
-            <td>
-    
-              <button (click)="removeOrder(dish.id!)">
-                <i class="fa-solid fa-trash-can" title="Delete"></i>
-              </button>
-            </td>
-
-        </div>
-
-        
-      </tr>
-      <ng-template #elseBlock>No Meals have been added for this match!</ng-template>
-
-    </table>
-    <!-- <app-add-order-form (orderSave)="addOrder(focusedDish)"></app-add-order-form> -->
-  </div>
-
-
-  <app-add-test></app-add-test>
+<app-add-test></app-add-test>
 <button>
-
-<button   >
-<a [routerLink]="['/world-cup-matches']" [routerLinkActive]="['link-active']"
->Go Back to World Cup Matches</a>
-      </button>
-
-
-      
+  <button>
+    <a
+      [routerLink]="['/world-cup-matches']"
+      [routerLinkActive]="['link-active']"
+      >Go Back to World Cup Matches</a
+    >
+  </button>
+</button>

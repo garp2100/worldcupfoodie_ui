@@ -13,10 +13,7 @@ const routes: Routes = [
   {path:'grocerylist', component:GrocerylistComponent},
   {path:'add-dish', component:AddDishComponent},
   {path:'add-test', component:AddTestComponent},
-
   {path:'',component:WordCupMatchesComponent,pathMatch:'full'}
-
-
 ];
 
 @NgModule({
