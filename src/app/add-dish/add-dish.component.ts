@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DishCrudService } from '../dish-crud.service';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
-import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
+import { WorldCupMatchInfo } from '../world-cup-match-info';
 import { WorldCupDish } from '../interface/world-cup-dish';
 @Component({
   selector: 'app-add-dish',
@@ -25,12 +25,20 @@ export class AddDishComponent implements OnInit {
 
   removeOrder = (id: number): void => {
     this.dishcrudstuff.deleteOrder(id).subscribe(() => this.allDishes);
+    this.reloadPage()
   }
 
   addOrder = (order: WorldCupDish): void => {
     this.dishcrudstuff.addNewOrder(order).subscribe(() => this.allDishes);
   }
+
   addDish = (newDish: WorldCupDish): void => {
     this.dishcrudstuff.addNewDish(newDish);
+  }
+
+  reloadPage(): void {
+    setTimeout(() => {
+      location.reload();
+    }, 100)
   }
 }
