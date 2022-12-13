@@ -26,6 +26,7 @@ import { ListMealsComponent } from './list-meals/list-meals.component';
     AddTestComponent,
     ListMealsComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,4 +39,5 @@ import { ListMealsComponent } from './list-meals/list-meals.component';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule { }

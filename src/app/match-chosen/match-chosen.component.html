@@ -1,22 +1,32 @@
+<div class="d-flex justify-content-center">
+  <span>
+    <img
+      src="https://www.sciencekids.co.nz/images/pictures/flags680/{{
+        focusedMatch.team1.replace(' ', '_')
+      }}.jpg	"
+      alt="{{ focusedMatch.team1 }} Flag"
+      width="100"
+      height="100"
+    />
+    <br />
+    <p>{{ focusedMatch.team1 }}</p>
+  </span>
 
-<div class="d-flex justify-content-center" >
-    <span>    <img src="https://www.sciencekids.co.nz/images/pictures/flags680/{{focusedMatch.team1.replace(' ','_')}}.jpg	" alt="{{focusedMatch.team1}} Flag" width="100" height="100">
-   <br>
- <p>{{ focusedMatch.team1 }}</p> 
+  <div class="center-match-info">
+    <p>VS</p>
 
-    </span>
-   
-    <div class="center-match-info">
-        <p>VS</p> 
-       
-                <p>{{ focusedMatch.matchDate | date }} </p>
+    <p>{{ focusedMatch.matchDate | date }}</p>
+  </div>
 
-            </div>
-            
-    <span>    <img src="https://www.sciencekids.co.nz/images/pictures/flags680/{{focusedMatch.team2.replace(' ','_')}}.jpg	" alt="{{focusedMatch.team2}} Flag" width="100" height="100">
-        <p>{{ focusedMatch.team2 }}</p> 
-
-    </span>
+  <span>
+    <img
+      src="https://www.sciencekids.co.nz/images/pictures/flags680/{{
+        focusedMatch.team2.replace(' ', '_')
+      }}.jpg	"
+      alt="{{ focusedMatch.team2 }} Flag"
+      width="100"
+      height="100"
+    />
+    <p>{{ focusedMatch.team2 }}</p>
+  </span>
 </div>
-
-  

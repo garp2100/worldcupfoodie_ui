@@ -13,7 +13,7 @@ export class PocComponent implements OnInit {
   apiResponse: RootObject = {
     meals: []
   };
-  // public selectedIngredients: string[]=[];
+
   selectedIngredients = this.service.selectedIngredients
   public dropdownFlag: boolean = false;
   public filterForm: FormGroup = this.fb.group({
@@ -29,10 +29,12 @@ export class PocComponent implements OnInit {
   loadMeals = (): void => {
     this.service.getMeals().subscribe((data: RootObject) => this.apiResponse = data);
   }
+
   public saveIngredient(e: any): void {
     let find = this.apiResponse.meals.find(x => x?.strIngredient === e.target.value);
     console.log(find?.idIngredient)
   }
+
   public onInputChange(): void {
     if (this.filterForm.get('filter')?.value){
       this.dropdownFlag = true;
@@ -41,13 +43,14 @@ export class PocComponent implements OnInit {
       this.dropdownFlag = false;
     }
   }
+
   public selectOption(meal: string): void {
    if (meal){
-    this.selectedIngredients.push(meal);
-   }
+      this.selectedIngredients.push(meal);
+    }
   }
+
   public deselectOption(mealId: number): void {
     this.selectedIngredients.splice(mealId, 1)
   }
-
 }

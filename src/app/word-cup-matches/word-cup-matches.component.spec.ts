@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WordCupMatchesComponent } from './word-cup-matches.component';
 
 describe('WordCupMatchesComponent', () => {

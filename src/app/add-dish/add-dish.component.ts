@@ -4,12 +4,12 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
 import { WorldCupMatchInfo } from '../world-cup-match-info';
 import { WorldCupDish } from '../interface/world-cup-dish';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 @Component({
   selector: 'app-add-dish',
   templateUrl: './add-dish.component.html',
   styleUrls: ['./add-dish.component.css']
 })
+
 export class AddDishComponent implements OnInit {
   allDishes: WorldCupDish[] = [];
 
@@ -21,7 +21,6 @@ export class AddDishComponent implements OnInit {
     this.service2.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
     this.dishcrudstuff.getAllDishes().subscribe((data:WorldCupDish[])=>this.allDishes=data);
     this.dishcrudstuff.getFocusedDish(this.focusedMatch.id).subscribe((data:any)=>this.focusedDish=data);
-
   }
 
   removeOrder = (id: number): void => {
@@ -34,5 +33,4 @@ export class AddDishComponent implements OnInit {
   addDish = (newDish: WorldCupDish): void => {
     this.dishcrudstuff.addNewDish(newDish);
   }
-
 }

@@ -14,8 +14,4 @@ export class WorldCupFoodieService {
   getMeals = (): Observable<RootObject> => {
     return this.httpClient.get<RootObject>("https://www.themealdb.com/api/json/v2/9973533/list.php?i=list")
   }
-
-  // getItems = (): Observable<> => {
-  //   return this.httpClient.get<>("")
-  // }
 }

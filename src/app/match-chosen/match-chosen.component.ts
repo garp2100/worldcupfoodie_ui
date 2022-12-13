@@ -11,15 +11,11 @@ import { Router, RouterModule, Routes } from '@angular/router';
 })
 export class MatchChosenComponent implements OnInit {
    focusedMatch = <WorldCupMatchInfo> {} as WorldCupMatchInfo;
-  // focusedMatch: WorldCupMatchInfo[] = [];
 
   constructor(private service: WorldCupMatchesService, private router: Router) { }
 
-
   ngOnInit(): void {
-  
+
     this.service.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
-
     }
-
 }
