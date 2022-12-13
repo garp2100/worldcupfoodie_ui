@@ -1,17 +1,7 @@
 <app-match-chosen> </app-match-chosen>
 
- <!-- <div *ngFor="let selectMeal of apiResponse.meals ">
-     <div *ngFor="let selectMeal of selectedMeals; let i = index">
-
-    
-   <p class="d-flex justify-content-center"*ngIf="selectMeal.idMeal == selectMeal; " >
-  
-    {{selectMeal.idMeal}}
-</p>
-     </div> 
-</div>  -->
-<h1>Selected Meals</h1>
-     <div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
+<h3 class="d-flex justify-content-left">Meal Recipes:</h3>
+<div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
 
     {{selectMeal.strMeal}}
     <img src={{selectMeal.strMealThumb}} alt="" width="100" height="100">
@@ -47,14 +37,16 @@
 
    
 <hr />
-<h2 class="d-flex justify-content-center">Final Grocery List</h2>
+ <h3 class="d-flex justify-content-left">Individual Grocery Items:</h3>
 ​ ​
 <div *ngFor="let sI of selectedIngredients; index as i" class="flex">
   <input type="checkbox" id="cbox2" value="second_checkbox" />
   <label for="cbox2">{{ sI }}</label>
-</div>
-​
+</div> 
+
 <hr />
+
+
 <button>
   <a [routerLink]="['/poc']" [routerLinkActive]="['link-active']"
     >Go Back to Grocery List Edit</a

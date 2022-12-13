@@ -20,7 +20,10 @@ option:checked {
   color:black;
   text-decoration: line-through;
 }
-
+label:checked {
+  color:black;
+  text-decoration: line-through;
+}
 button {
     margin-right:2rem;
 }
