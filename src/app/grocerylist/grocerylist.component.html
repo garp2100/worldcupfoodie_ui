@@ -1,20 +1,24 @@
 <app-match-chosen> </app-match-chosen>
 
- <!-- <div *ngFor="let meal of apiResponse.meals ">
+ <!-- <div *ngFor="let selectMeal of apiResponse.meals ">
      <div *ngFor="let selectMeal of selectedMeals; let i = index">
 
     
-   <p class="d-flex justify-content-center"*ngIf="meal.idMeal == selectMeal; " >
+   <p class="d-flex justify-content-center"*ngIf="selectMeal.idMeal == selectMeal; " >
   
-    {{meal.idMeal}}
+    {{selectMeal.idMeal}}
 </p>
      </div> 
 </div>  -->
-
+<h1>Selected Meals</h1>
      <div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
 
     {{selectMeal.idMeal}}
-    {{selectMeal.strIngredient1}}
+    {{selectMeal.strMeal}}
+    <img src={{selectMeal.strMealThumb}} alt="" width="200" height="200">
+
+<hr>
+
 
      </div> 
 

@@ -26,7 +26,7 @@ export class ListMealsComponent implements OnInit {
        this.service.selectedMeal.push(mealThing);
      }
    }
- 
+
   //  public deselectOption(mealId: string): void {
   //   this.service.selectedMeal.splice(mealId, 1)
   //  }
