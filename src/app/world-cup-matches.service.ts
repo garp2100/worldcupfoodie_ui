@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WorldCupMatchInfo } from './world-cup-match-info';
+import { WorldCupMatchInfo } from './interface/world-cup-match-info';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({

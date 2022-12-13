@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DishCrudService } from '../dish-crud.service';
 import { WorldCupDish } from '../interface/world-cup-dish';
-import { WorldCupMatchInfo } from '../world-cup-match-info';
+import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
 @Component({
   selector: 'app-add-test',
