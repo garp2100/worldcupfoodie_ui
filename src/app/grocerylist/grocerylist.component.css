@@ -16,7 +16,7 @@ input [type=checkbox]:checked + label {
   color:black;
   text-decoration: line-through;
 }
-select [type=checkbox]:checked + option {
+option:checked {
   color:black;
   text-decoration: line-through;
 }
