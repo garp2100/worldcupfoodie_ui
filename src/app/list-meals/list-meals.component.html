@@ -1,19 +1,16 @@
-<!-- |  slice:0:2; -->
-<h3 >Choose a Meal Recipe:</h3>
+<h3>Choose a Meal Recipe:</h3>
 
-<div >
-  <span *ngFor="let meal of apiResponse.meals ">
-  <button (click)="addMealIDToArray(meal)" >
-    <img src={{meal.strMealThumb}} alt="" width="100" height="100">
-
-    {{ meal.strMeal }}
-  </button>
-</span>
-  
-   
+<div>
+  <span *ngFor="let meal of apiResponse.meals">
+    <button (click)="addMealIDToArray(meal)">
+      <img src="{{ meal.strMealThumb }}" alt="" width="100" height="100" />
+      {{ meal.strMeal }}
+    </button>
+  </span>
 </div>
 
-        <h4>Your selected meals are below</h4>
+<h4>Your selected meals are below</h4>
+
 <div class="d-flex justify-content-right">
   <ul>
     <li *ngFor="let selected of selectedMeals; let i = index">

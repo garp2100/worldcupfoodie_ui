@@ -9,13 +9,13 @@ import { Router, RouterModule, Routes } from '@angular/router';
   templateUrl: './match-chosen.component.html',
   styleUrls: ['./match-chosen.component.css']
 })
+
 export class MatchChosenComponent implements OnInit {
-   focusedMatch = <WorldCupMatchInfo> {} as WorldCupMatchInfo;
+  focusedMatch = <WorldCupMatchInfo> {} as WorldCupMatchInfo;
 
   constructor(private service: WorldCupMatchesService, private router: Router) { }
 
   ngOnInit(): void {
-
     this.service.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
-    }
+  }
 }
