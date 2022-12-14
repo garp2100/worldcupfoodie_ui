@@ -12,6 +12,7 @@ import { GrocerylistComponent } from './grocerylist/grocerylist.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { AddTestComponent } from './add-test/add-test.component';
 import { ListMealsComponent } from './list-meals/list-meals.component';
+import { RefreshComponent } from './refresh/refresh.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListMealsComponent } from './list-meals/list-meals.component';
     GrocerylistComponent,
     AddDishComponent,
     AddTestComponent,
-    ListMealsComponent
+    ListMealsComponent,
+    RefreshComponent
   ],
 
   imports: [

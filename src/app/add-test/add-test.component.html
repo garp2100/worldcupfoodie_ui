@@ -2,5 +2,5 @@
   What are you bringing? <input [(ngModel)]="newDish1" /> Name:<input
     [(ngModel)]="newDescription"
   />
-  <button (click)="addDish(createdDish)">Add dish</button>
+  <button (click)="addDish(createdDish); refresh()">Add dish</button>
 </p>
