@@ -1,4 +1,33 @@
-<div *ngFor="let meal of apiResponse.meals">
-  {{ meal.strMeal }}
+<!-- |  slice:0:2; -->
+<h3 class="d-flex justify-content-left">Choose a Meal Recipe:</h3>
+
+<div *ngFor="let meal of apiResponse.meals ">
+  
+  <button class="btn btn-info" (click)="addMealIDToArray(meal)" >
+    {{ meal.strMeal }}
+  </button>
+
+  
+   
 </div>
 
+<button
+          type="button"
+          [ngClass]=" (hasBeenClicked)
+            ? 'btn btn-warning' : 'btn btn-outline-warning'
+          "
+          (click)="toggleDisplayDivIf()"
+         >
+         <div *ngIf="(hasBeenClicked); else elseBlock">Bookmarked!</div>
+          <ng-template #elseBlock> Bookmark </ng-template>
+        </button>
+
+        <h4>Your selected meals are below</h4>
+<div class="d-flex justify-content-left">
+  <ul>
+    <li *ngFor="let selected of selectedMeals; let i = index">
+      {{ selected.strMeal }}
+      <button (click)="deselectOption(selected)">Remove</button>
+    </li>
+  </ul>
+</div>

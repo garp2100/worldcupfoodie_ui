@@ -1,14 +1,52 @@
 <app-match-chosen> </app-match-chosen>
-<app-list-meals></app-list-meals>
+
+<h3 class="d-flex justify-content-left">Meal Recipes:</h3>
+<div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
+
+    {{selectMeal.strMeal}}
+    <img src={{selectMeal.strMealThumb}} alt="" width="100" height="100">
+    
+  
+    <select  type="checkbox"  multiple="multiple">
+<option>{{selectMeal.strIngredient1}}</option>
+<option>{{selectMeal.strIngredient2}}</option>
+<option>{{selectMeal.strIngredient3}}</option>
+<option>{{selectMeal.strIngredient4}}</option>
+<option>{{selectMeal.strIngredient5}}</option>
+<option>{{selectMeal.strIngredient6}}</option>
+<option>{{selectMeal.strIngredient7}}</option>
+<option>{{selectMeal.strIngredient8}}</option>
+<option>{{selectMeal.strIngredient9}}</option>
+<option>{{selectMeal.strIngredient10}}</option>
+<option>{{selectMeal.strIngredient11}}</option>
+<option>{{selectMeal.strIngredient12}}</option>
+<option>{{selectMeal.strIngredient13}}</option>
+<option>{{selectMeal.strIngredient14}}</option>
+<option>{{selectMeal.strIngredient15}}</option>
+<option>{{selectMeal.strIngredient16}}</option>
+<option>{{selectMeal.strIngredient17}}</option>
+<option>{{selectMeal.strIngredient18}}</option>
+<option>{{selectMeal.strIngredient19}}</option>
+<option>{{selectMeal.strIngredient20}}</option>
+
+    </select>
+<hr>
+
+
+     </div> 
+
+   
 <hr />
-<h2 class="d-flex justify-content-center">Final Grocery List</h2>
+ <h3 class="d-flex justify-content-left">Individual Grocery Items:</h3>
 ​ ​
 <div *ngFor="let sI of selectedIngredients; index as i" class="flex">
   <input type="checkbox" id="cbox2" value="second_checkbox" />
   <label for="cbox2">{{ sI }}</label>
-</div>
-​
+</div> 
+
 <hr />
+
+
 <button>
   <a [routerLink]="['/poc']" [routerLinkActive]="['link-active']"
     >Go Back to Grocery List Edit</a
