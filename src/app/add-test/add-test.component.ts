@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { Location } from '@angular/common';
 import { DishCrudService } from '../dish-crud.service';
 import { WorldCupDish } from '../interface/world-cup-dish';
 import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
@@ -19,10 +21,18 @@ export class AddTestComponent implements OnInit {
     description: "",
   }
 
-  constructor(private service2:WorldCupMatchesService, private service3:DishCrudService) { }
+  constructor(private service2:WorldCupMatchesService, private service3:DishCrudService, public router: Router, public _location: Location) { }
+
   ngOnInit(): void {
     this.service2.getFocusedMatch().subscribe((data:WorldCupMatchInfo)=>this.focusedMatch=data);
     this.newMatchId = this.focusedMatch.id
+  }
+
+  refresh(): void {
+    this.router.navigateByUrl("/refresh", { skipLocationChange: true }).then(() => {
+      console.log(decodeURI(this._location.path()));
+      this.router.navigate([decodeURI(this._location.path())]);
+    });
   }
 
   getID():any{

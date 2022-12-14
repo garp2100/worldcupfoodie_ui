@@ -6,6 +6,8 @@ import { MatchChosenComponent } from './match-chosen/match-chosen.component';
 import { GrocerylistComponent } from './grocerylist/grocerylist.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { AddTestComponent } from './add-test/add-test.component';
+import { RefreshComponent } from './refresh/refresh.component';
+
 const routes: Routes = [
   {path:'poc',component:PocComponent},
   {path:'world-cup-matches',component:WordCupMatchesComponent},
@@ -13,6 +15,7 @@ const routes: Routes = [
   {path:'grocerylist', component:GrocerylistComponent},
   {path:'add-dish', component:AddDishComponent},
   {path:'add-test', component:AddTestComponent},
+  {path:'refresh',component:RefreshComponent},
   {path:'',component:WordCupMatchesComponent,pathMatch:'full'}
 ];
 
