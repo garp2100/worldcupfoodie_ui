@@ -38,12 +38,19 @@
    
 <hr />
  <h3 class="d-flex justify-content-left">Individual Grocery Items:</h3>
-​ ​
+<!-- ​ ​
 <div *ngFor="let sI of selectedIngredients; index as i" class="flex">
   <input type="checkbox" id="cbox2" value="second_checkbox" />
-  <label for="cbox2">{{ sI }}</label>
-</div> 
+  <option for="cbox2">{{ sI }}</option>
+</div>  -->
 
+<div >
+  <select  type="checkbox"  multiple="multiple">
+<option *ngFor="let sI of selectedIngredients; index as i" class="flex">{{sI}}</option>
+
+
+  </select>
+  </div>
 <hr />
 
 
