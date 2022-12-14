@@ -8,22 +8,28 @@
     color: #01070C;
     padding: 30px;
   }
+
   .add-test-heading {
     margin: 0 10px 10px 10px;
   }
+
   input {
     margin-bottom: 10px;
   }
+
   #rating,
+
   #order-again {
     margin-left: 10px;
   }
+
   button {
     background-color: #e3e1e1;
     border: 2px solid #A52A2A;
     margin-top: 20px;
   }
-    button:hover {
-      background-color: #03324C;
-      color: #ffffff;
-    }
+
+  button:hover {
+    background-color: #03324C;
+    color: #ffffff;
+  }

@@ -28,6 +28,7 @@ export class GrocerylistComponent implements OnInit {
       selected: false
     }
   ]
+
   selectedIngredients = this.service.selectedIngredients
   allChosenMealsFromGrocery: Meals[] =this.service2.selectedMeal;
 
@@ -37,11 +38,10 @@ export class GrocerylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.service2.fetchMeals().subscribe((data: RootObject2) => this.apiResponse = data);
-
   }
+
   public getSelected() {
-    let result = this.checkboxes.filter((ch) => { return ch.selected })
-                     .map((ch) => { return ch.value });
+    let result = this.checkboxes.filter((ch) => { return ch.selected }).map((ch) => { return ch.value });
     console.log(result);
-}
+  }
 }

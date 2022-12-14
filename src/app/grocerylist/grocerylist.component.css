@@ -1,10 +1,12 @@
 div {
     padding-top: 1rem;
 }
+
 .center-match-info {
   padding: 1rem;
   text-align: center;
 }
+
 img {
   border-style: solid;
 }
@@ -12,18 +14,22 @@ img {
 label {
   font-size: 1.5em;
 }
+
 input [type=checkbox]:checked + label {
   color:black;
   text-decoration: line-through;
 }
+
 option:checked {
   color:black;
   text-decoration: line-through;
 }
+
 label:checked {
   color:black;
   text-decoration: line-through;
 }
+
 button {
     margin-right:2rem;
 }

@@ -7,7 +7,9 @@ import { Meals, RootObject2 } from './interface/world-cup-meals';
 @Injectable({
   providedIn: 'root'
 })
+
 export class WorldCupMealsService {
+
   public selectedMeal: Meals[]=[];
 
   constructor(private httpClient: HttpClient) { }
@@ -15,6 +17,4 @@ export class WorldCupMealsService {
   fetchMeals = (): Observable<RootObject2> => {
     return this.httpClient.get<RootObject2>("https://www.themealdb.com/api/json/v2/9973533/randomselection.php")
   }
-
-  
 }

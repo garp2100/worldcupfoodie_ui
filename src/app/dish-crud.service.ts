@@ -12,17 +12,13 @@ export class DishCrudService {
 
     backendURL:string='https://localhost:7235/api';
 
-    constructor(private httpClient:HttpClient) { }
-    getAllDishes = ():Observable<WorldCupDish[]> => {
+    constructor(private httpClient:HttpClient) { } getAllDishes = ():Observable<WorldCupDish[]> => {
     return this.httpClient.get<WorldCupDish[]>(this.backendURL + "/Dishes");
   }
 
-  getFocusedDish= ( incomingDishId: number):Observable<WorldCupDish> => {
-    return this.httpClient.get<any>(this.backendURL + "/Dishes/"+incomingDishId);
-  }
-
   addNewDish = (dish: WorldCupDish): Observable<WorldCupDish> => {
-    return this.httpClient.post<WorldCupDish>(this.backendURL + "/Dishes/", dish)}
+    return this.httpClient.post<WorldCupDish>(this.backendURL + "/Dishes/", dish)
+  }
 
   addNewOrder = (order: WorldCupDish): Observable<WorldCupDish> => {
     return this.httpClient.post<WorldCupDish>(this.backendURL + "/Dishes", order);
@@ -31,6 +27,7 @@ export class DishCrudService {
   deleteOrder = (id: number): Observable<void> => {
     return this.httpClient.delete<void>(this.backendURL + "/Dishes/" + id);
   }
+
   eventBeingUsed(idEvent: number){
     this.dishID = idEvent;
   }

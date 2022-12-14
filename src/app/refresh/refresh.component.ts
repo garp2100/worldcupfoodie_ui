@@ -11,5 +11,4 @@ export class RefreshComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

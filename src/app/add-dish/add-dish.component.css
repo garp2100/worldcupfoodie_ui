@@ -5,16 +5,20 @@ table.blueTable {
   text-align: left;
   border-collapse: collapse;
 }
+
 table.blueTable td, table.blueTable th {
   border: 1px solid #AAAAAA;
   padding: 3px 2px;
 }
+
 table.blueTable tbody td {
   font-size: 13px;
 }
+
 table.blueTable tr:nth-child(even) {
   background: #A52A2A;
 }
+
 table.blueTable thead {
   background: #A52A2A;
   background: -moz-linear-gradient(top, #bb5f5f 0%, #ae3f3f 66%, #A52A2A 100%);
@@ -22,12 +26,14 @@ table.blueTable thead {
   background: linear-gradient(to bottom, #bb5f5f 0%, #ae3f3f 66%, #A52A2A 100%);
   border-bottom: 2px solid #444444;
 }
+
 table.blueTable thead th {
   font-size: 15px;
   font-weight: bold;
   color: #FFFFFF;
   border-left: 2px solid #A52A2A;
 }
+
 table.blueTable thead th:first-child {
   border-left: none;
 }
@@ -35,9 +41,11 @@ table.blueTable thead th:first-child {
 table.blueTable tfoot td {
   font-size: 14px;
 }
+
 table.blueTable tfoot .links {
   text-align: right;
 }
+
 table.blueTable tfoot .links a{
   display: inline-block;
   background: #1C6EA4;

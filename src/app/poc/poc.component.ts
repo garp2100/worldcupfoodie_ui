@@ -8,14 +8,18 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   templateUrl: './poc.component.html',
   styleUrls: ['./poc.component.css']
 })
+
 export class PocComponent implements OnInit {
   public ingredientValue!: string;
+
   apiResponse: RootObject = {
     meals: []
   };
 
   selectedIngredients = this.service.selectedIngredients
+
   public dropdownFlag: boolean = false;
+
   public filterForm: FormGroup = this.fb.group({
 		filter: ['', Validators.required],
 	});
