@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DishCrudService } from '../dish-crud.service';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
-import { WorldCupMatchInfo } from '../world-cup-match-info';
+import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
 import { WorldCupDish } from '../interface/world-cup-dish';
 @Component({
   selector: 'app-add-dish',
@@ -38,7 +38,7 @@ export class AddDishComponent implements OnInit {
 
   reloadPage(): void {
     setTimeout(() => {
-      location.reload();
+      window.location.reload();
     }, 100)
   }
 }

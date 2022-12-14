@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorldCupMatchesService } from '../world-cup-matches.service';
-import { WorldCupMatchInfo } from '../world-cup-match-info';
+import { WorldCupMatchInfo } from '../interface/world-cup-match-info';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { WorldCupFoodieService } from '../world-cup-foodie.service';
 
