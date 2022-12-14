@@ -1,42 +1,34 @@
 <app-match-chosen></app-match-chosen>
-<div class="d-flex justify-content-center">
-  <table class="order-table">
-    <tr>
-      <th>Dish Name</th>
-      <th>Description</th>
-      <th>MatchId</th>
-      <th>DishId</th>
-    </tr>
 
-    <tr *ngFor="let dish of allDishes; index as i">
-      <div
-        class="d-flex justify-content-center"
-        *ngIf="dish.matchId == focusedMatch.id; else elseBlock" >
-        <td class="innerDishInfo">{{ dish.dish1 }}</td>
-        <td class="innerDishInfo">{{ dish.description }}</td>
-        <td class="innerDishInfo">{{ dish.matchId }}</td>
-        <td class="innerDishInfo">{{ dish.id }}</td>
 
-        <td>
-          <button (click)="removeOrder(dish.id!)">
-            <i class="fa-solid fa-trash-can" title="Delete"></i>
-          </button>
-        </td>
-      </div>
-    </tr>
-    <ng-template #elseBlock
-      ></ng-template
-    >
+<table class="blueTable">
+  <thead>
+  <tr>
+  <th>Dish:</th>
+  <th>Notes:</th>
+  <th>Delete</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+  <td colspan="2">
+  </td>
+  </tr>
+  </tfoot>
+  <tbody *ngFor="let dish of allDishes; index as i">
+  <tr *ngIf="dish.matchId==focusedMatch.id">
+  <td>{{ dish.dish1 }}</td>
+  <td>{{ dish.description }}</td>
+  <td><button (click)="removeOrder(dish.id!)"><i class="fa-solid fa-trash-can" title="Delete"></i></button></td>
+  </tr>
+  </tbody>
   </table>
-</div>
+<hr>
 
 <app-add-test></app-add-test>
+
+
 <button>
-  <button>
-    <a
-      [routerLink]="['/world-cup-matches']"
-      [routerLinkActive]="['link-active']"
-      >Go Back to World Cup Matches</a
-    >
-  </button>
-</button>
+<a [routerLink]="['/world-cup-matches']" [routerLinkActive]="['link-active']"
+>Go Back to World Cup Matches</a>
+      </button>
