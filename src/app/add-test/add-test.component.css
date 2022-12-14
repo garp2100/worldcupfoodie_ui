@@ -19,11 +19,11 @@
     margin-left: 10px;
   }
   button {
-    background-color: #EF6738;
-    border: 2px solid #EF6738;
+    background-color: #e3e1e1;
+    border: 2px solid #A52A2A;
     margin-top: 20px;
   }
     button:hover {
       background-color: #03324C;
-      color: #EF6738;
+      color: #ffffff;
     }

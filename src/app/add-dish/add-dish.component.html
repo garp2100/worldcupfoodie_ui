@@ -1,29 +1,21 @@
 <app-match-chosen></app-match-chosen>
 
-
 <table class="blueTable">
   <thead>
   <tr>
-  <th>Dish:</th>
-  <th>Notes:</th>
-  <th>Delete</th>
+    <th>Item</th>
+    <th>Name</th>
+    <th>Delete</th>
   </tr>
   </thead>
-  <tfoot>
-  <tr>
-  <td colspan="2">
-  </td>
-  </tr>
-  </tfoot>
   <tbody *ngFor="let dish of allDishes; index as i">
   <tr *ngIf="dish.matchId==focusedMatch.id">
-  <td>{{ dish.dish1 }}</td>
-  <td>{{ dish.description }}</td>
-  <td><button (click)="removeOrder(dish.id!)"><i class="fa-solid fa-trash-can" title="Delete"></i></button></td>
+    <td>{{ dish.dish1 }}</td>
+    <td>{{ dish.description }}</td>
+    <td><button (click)="removeOrder(dish.id!)"><i class="fa-solid fa-trash-can" title="Delete"></i></button></td>
   </tr>
   </tbody>
   </table>
-<hr>
 
 <app-add-test></app-add-test>
 
@@ -31,4 +23,9 @@
 <button>
 <a [routerLink]="['/world-cup-matches']" [routerLinkActive]="['link-active']"
 >Go Back to World Cup Matches</a>
+      </button>
+      <button>
+        <a [routerLink]="['/poc']" [routerLinkActive]="['link-active']"
+          >Go to Grocery List Edit</a
+        >
       </button>
