@@ -33,3 +33,19 @@ label:checked {
 button {
     margin-right:2rem;
 }
+
+a{
+  padding: 1rem;
+  flex-wrap: nowrap;
+}
+.selectMealIngredients{
+  display:inline-block;
+  vertical-align:middle;
+  padding: 1rem;
+}
+div{
+  display:inline-block;
+  vertical-align:middle;
+  padding: 1rem;
+
+}

@@ -44,5 +44,6 @@ export class AddTestComponent implements OnInit {
     this.service3.addNewDish(dish).subscribe(() => this.service2.getFocusedMatch())
     this.newDish1 = "";
     this.newDescription = "";
+    this.refresh();
   }
 }

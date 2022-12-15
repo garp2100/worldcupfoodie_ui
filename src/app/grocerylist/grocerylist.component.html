@@ -1,11 +1,13 @@
 <app-match-chosen> </app-match-chosen>
 
 <h3 class="d-flex justify-content-left">Meal Recipes:</h3>
-<div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
-  {{ selectMeal.strMeal }}
-  <img src="{{ selectMeal.strMealThumb }}" alt="" width="100" height="100" />
 
-  <select type="checkbox" multiple="multiple">
+<div *ngFor="let selectMeal of allChosenMealsFromGrocery; let i = index">
+  <a href={{selectMeal.strYoutube}} target="_blank">  {{ selectMeal.strMeal }}</a>
+
+  <img src="{{ selectMeal.strMealThumb }}"  alt="" width="100" height="100" />
+  <span class="selectMealIngredients">
+  <select type="checkbox" multiple="multiple" >
     <option>{{ selectMeal.strIngredient1 }}</option>
     <option>{{ selectMeal.strIngredient2 }}</option>
     <option>{{ selectMeal.strIngredient3 }}</option>
@@ -27,9 +29,10 @@
     <option>{{ selectMeal.strIngredient19 }}</option>
     <option>{{ selectMeal.strIngredient20 }}</option>
   </select>
+</span>
   <hr />
-</div>
 
+</div>
 <hr />
 <h3 class="d-flex justify-content-left">Individual Grocery Items:</h3>
 
@@ -42,12 +45,12 @@
 </div>
 <hr />
 
-<button>
+<button class="btn btn-warning">
   <a [routerLink]="['/poc']" [routerLinkActive]="['link-active']"
     >Go Back to Grocery List Edit</a
   >
 </button>
-<button>
+<button class="btn btn-info">
   <a [routerLink]="['/world-cup-matches']" [routerLinkActive]="['link-active']"
     >Go Back to World Cup Matches</a
   >

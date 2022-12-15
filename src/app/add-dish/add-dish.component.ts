@@ -36,6 +36,7 @@ export class AddDishComponent implements OnInit {
 
     removeOrder = (id: number): void => {
       this.dishcrudstuff.deleteOrder(id).subscribe(() => this.allDishes);
+      this.refresh();
     }
 
     addOrder = (order: WorldCupDish): void => {
