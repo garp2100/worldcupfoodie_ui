@@ -53,3 +53,10 @@ table.blueTable tfoot .links a{
   padding: 2px 8px;
   border-radius: 5px;
 }
+a {
+  color: black;
+}
+.btn {
+  margin-right: 1rem;
+  padding: .5rem;
+}
